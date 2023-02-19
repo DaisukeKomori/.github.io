@@ -195,6 +195,29 @@ function readCsv() {
   return arrayRet;
 }
 
+// postgreSQL DBへ接続
+// function getDBData() {
+//   const {Client} = require('pg');
+//   const client = new Client({
+//     user: "postgres",
+//     host: "161.95.132.114",
+//     database: "vehicle_management",
+//     password: "TmcILS01",
+//     port: 5432
+//   })
+ 
+//   client.connect()
+
+//   sql = "select * from t_vehicle_state";
+//   const arrayCurrent = client.query(sql)
+//   arrayCsv.splice[0, arrayCsv.length - 1];
+//   arrayCurrent.map(function(element) {
+//       sql = "select location_name, x, y, z from m_route_master where vehicle_id = "
+//              + element[0] + " and waypoint_id = " + element[7];
+//       arrayCsv.push(client.query(sql));
+//   })
+// }
+
 // 地図上の座標確認用
 document.body.addEventListener("click", function(event) {
 	let x = event.pageX;
