@@ -1,22 +1,23 @@
 'use strict'
-// 1行目に記載している 'use strict' は削除しないでください
 
-const indexNo = [0, 0, 0, 0, 0];
-const defColor = document.getElementsByTagName("caption")[0].backgroundColor;
-let lastObject = [defColor, defColor, defColor, defColor];
-let lastTr = 0;
+// 要素指定に使用する配列
+const indexNo = [0, 0, 0, 0, 0];  // ランダムなマスターレコードNo
+let lastTr = 0; // 前回取得したTable Row要素
 
-const arrayNameOfId = ["aName", "bName", "cName", "dName", "eName"];
+const arrayNameOfId = ["aName", "bName", "cName", "dName", "eName"];  // エリア名id指定用
 const arrayTd = [
   ["ax", "bx", "cx", "dx", "ex"],
   ["ay", "by", "cy", "dy", "ey"], 
   ["az", "bz", "cz", "dz", "ez"]
-];
+];  // エリア毎のx, y, z id指定用
 
-const tr = ["trA", "trB", "trC", "trD", "trE"];
-const car = ["carA", "carB", "carC", "carD", "carE"];
+const tr = ["trA", "trB", "trC", "trD", "trE"];         // tr id指定用
+const car = ["carA", "carB", "carC", "carD", "carE"];   // アイコン指定用
 
-const arrayCsv = [];  //データ格納用
+const arrayCsv = [];  // マスターデータ格納用
+
+const defColor = document.getElementsByTagName("caption")[0].backgroundColor;
+let lastObject = [defColor, defColor, defColor, defColor];
 
 // 現在の年月日時刻を文字列で返す
 function getDate() {
@@ -93,48 +94,56 @@ function createTable() {
   }
 }
 
+// テーブルへ取得したデータをセット
 function setData() {
   // 要素選択用Random
-  let min = 0;
-  let max = 4;
-  const id = Math.floor( Math.random() * (max + 1 - min) ) + min;
+  let min = 0;  // tr要素指定配列最小インデックス
+  let max = indexNo.length - 1;  // tr要素指定配列最大インデックス
+  const id = Math.floor( Math.random() * (max + 1 - min) ) + min; // tr要素インデックスランダム
   
   // マスターレコード選択用
-  min = 0;
-  max = arrayCsv.length - 1 // 29347;
-  if ((indexNo[id] === 0) || (indexNo[id] === max)) {
-    indexNo[id] = Math.floor( Math.random() * (max + 1 - min) ) + min;
+  min = 0;  // レコード最小インデックス
+  max = arrayCsv.length - 1 // レコード最大インデックス 29347;
+  if ((indexNo[id] === 0) || (indexNo[id] === max)) {   // 初期化前 or maxの場合
+    indexNo[id] = Math.floor( Math.random() * (max + 1 - min) ) + min;  // 再取得
   } else {
-    indexNo[id] += 1;
+    indexNo[id] += 1; // 次のレコード
   }
 
   if (lastTr !== 0) {
-    lastTr.style.backgroundColor = "white";
+    lastTr.style.backgroundColor = "white";   // trに指定した色を削除
   }
-  lastTr = document.getElementById(tr[id]);
+  lastTr = document.getElementById(tr[id]); // tr要素保存
 
+  // 各要素を取得
   lastObject[0] = document.getElementById(arrayNameOfId[id]);
   lastObject[1] = document.getElementById(arrayTd[0][id]);
   lastObject[2] = document.getElementById(arrayTd[1][id]);
   lastObject[3] = document.getElementById(arrayTd[2][id]);
 
+  // データを挿入
   lastObject[0].innerText = arrayCsv[indexNo[id]][5];
   lastObject[1].innerText = arrayCsv[indexNo[id]][6];
   lastObject[2].innerText = arrayCsv[indexNo[id]][7];
   lastObject[3].innerText = arrayCsv[indexNo[id]][8];
   lastTr.style.backgroundColor = "lavender";
 
+  // アイコンを表示
   setDraw(id, arrayCsv[indexNo[id]][6], arrayCsv[indexNo[id]][7]);
 }  
 
+// アイコンを指定位置へ表示
 function setDraw(carIndex, x, y) {
   const objCarIcon = document.getElementById(car[carIndex]);
   objCarIcon.style.left = Math.abs(y) + 500 + "px";
   objCarIcon.style.top = Math.abs(x) + 600 + "px";
+  // objCarIcon.style.left = y + 650 + "px";
+  // objCarIcon.style.top = x + 900 + "px";
 }
 
 setInterval(action, 1000);  // 時計用
 
+// マスターファイル
 const fileInput = document.getElementById("getfile");
 const fileReader = new FileReader();
 
@@ -146,11 +155,11 @@ fileInput.onchange = () => {
 
 // ファイル読み込み時
 fileReader.onload = () => {
-  // ファイル読み込み
+  // 改行で分け配列へ格納
   const lines = fileReader.result.split('\n');
   // 先頭行のヘッダを削除
   lines.shift();
-  // 配列へ格納
+  // line毎に配列へ格納
   for (let i = 0; i < lines.length; ++i) {
     arrayCsv.push(lines[i].split(","))
   }
