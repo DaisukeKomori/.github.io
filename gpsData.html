@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styleData.css" />
+</head>
+
+<body background="RPiSystem.png">
+  <h1 id="head1">自動運転車のデータをDBから取得</h2>
+  <input id="getfile" type="file" accept="text/csv">
+  <table> 
+      <tBody>
+        <caption></caption>
+        <tr>
+          <th class="center">車両</th>
+          <th class="center">エリア</th>
+          <th class="center">X</th>
+          <th class="center">Y</th>
+          <th class="center">Z</th>
+        </tr>
+          <tr id="trA">
+            <td class="center">車両A</td>
+            <td id="aName" class="center">第3工場</td>
+            <td id="ax" class="right">27.15</td>
+            <td id="ay" class="right">30.42</td>
+            <td id="az" class="right">21.81</td>
+          </tr>
+          <tr id="trB">
+            <td class="center">車両B</td>
+            <td id="bName" class="center">第4工場</td>
+            <td id="bx" class="right">15.12</td>
+            <td id="by" class="right">18.23</td>
+            <td id="bz" class="right">17.56</td>
+          </tr>
+          <tr id="trC">
+            <td class="center">車両C</td>
+            <td id="cName" class="center">第4工場</td>
+            <td id="cx" class="right">15.12</td>
+            <td id="cy" class="right">18.23</td>
+            <td id="cz" class="right">17.56</td>
+          </tr>
+          <tr id="trD">
+            <td class="center">車両D</td>
+            <td id="dName" class="center">第4工場</td>
+            <td id="dx" class="right">15.12</td>
+            <td id="dy" class="right">18.23</td>
+            <td id="dz" class="right">17.56</td>
+          </tr>
+          <tr id="trE">
+            <td class="center">車両E</td>
+            <td id="eName" class="center">第4工場</td>
+            <td id="ex" class="right">15.12</td>
+            <td id="ey" class="right">18.23</td>
+            <td id="ez" class="right">17.56</td>
+          </tr>
+      </tBody>
+    </table>
+
+    <br>
+
+    <div id="map">
+        <!-- 地理院のマップをフレームで表示 -->
+        <!-- <iframe frameborder="2" scrolling="no" src="https://maps.gsi.go.jp/?hc=hic#17/34.858499/136.963447/&base=std&ls=std&disp=1&vs=c1g1j0h0k0l0u0t0z0r0s0m0f1"></iframe> -->
+        <img src="Map.png" width=1000 height=1000 alt="Kinuuta plant">
+    </div>
+    <div id="carA"><img src="A.png" width=30% height=30% alt="A"></div>
+    <div id="carB"><img src="B.png" width=30% height=30% alt="B"></div>
+    <div id="carC"><img src="C.png" width=30% height=30% alt="C"></div>
+    <div id="carD"><img src="D.png" width=30% height=30% alt="D"></div>
+    <div id="carE"><img src="E.png" width=30% height=30% alt="E"></div>
+
+    <script type="text/javascript" src="scriptData.js"></script>
+</body>
+
+</html>

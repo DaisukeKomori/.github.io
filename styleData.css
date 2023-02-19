@@ -1,0 +1,100 @@
+/* stylesheet of gpsData.html */
+
+h1 {
+    text-align: center;         /* センター揃え */
+    color: #6eb0f9;
+    color: #482ddf;
+    line-height: 1.4;
+    -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
+}
+
+th,td {
+    width: 150px;               /* 幅 */
+    height: 5px;                /* 高さ */
+    border-style: double;       /* 2重線 */
+    padding: 2px;               /* 線と文字の間の余白 */
+}
+ 
+table {
+    margin: auto;               /* 上下左右のマージン（外側の余白） */
+    border-collapse: collapse;  /* セルの線を重ねる */
+    border-style: double;       /* 2重線 */
+    font-size: medium;
+}
+ 
+th {
+    text-align: center;         /* 文字の揃え位置指定 */
+}
+ 
+td {
+    text-align: right;          /* 右揃え */
+}
+
+.center {
+    text-align: center;         /* センター揃え */
+}
+
+.right {
+    text-align: right;          /* 右揃え */
+}
+
+caption {
+    text-align:center;           /* センター揃え */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#getfile {
+    align-self: flex-end;
+    border: 2px;
+}
+ 
+#map {
+    text-align: center;
+}
+
+iframe {
+    width: 1000px;
+    height: 1000px;
+    border: 2px;
+}
+
+#carA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+    position: absolute;
+}
+
+#carB {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+    position: absolute;
+ }
+
+#carC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+    position: absolute;
+ }
+
+#carD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+    position: absolute;
+}
+
+#carE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+    position: absolute;
+}

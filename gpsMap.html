@@ -2,22 +2,34 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" type="text/css" href="styleRasp.css" />
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <script type="text/javascript" src="script.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" type="text/css" href="styleMap.css" />
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body background="RPiSystem.png">
-    <h1 id="head1">自動運転車にラズパイとGPSユニットを搭載</h2>
-    <img src="RaspberryPi_GPS.png" width=50% height=50% alt="RaspberryPi"><img src="RaspberryPi.png" width=50% height=50% alt="RaspberryPi">
-    <br><br><br>
-    <div class="Fcxtrot">
-        <img src="FcxtrotGPS.png" alt="RaspberryPi">
+  <h1 id="head1">自動運転車にラズパイとGPSユニットを搭載</h2>
+  <div class="flex">
+    <figure class="image">
+      <img src="RaspberryPi_GPS.png" width=60% height=80% alt="RaspberryPi">
+    </figure>
+    <div class="right">
+      <div class="rect">
+        <span>
+          ・Raspberry Pi OS install<br>
+          ・GPSユニット<br>
+          ・シリアルポート Open<br>
+          ・gpsd install<br>
+          ・gpsdへシリアルポートセット<br>
+          ・FcxtrotGPS install
+        </span>
+        </div>        
     </div>
-
+  </div>
+  <div class="Fcxtrot">
+      <img src="FcxtrotGPS.png" alt="RaspberryPi">
+  </div>
 </body>
-
 </html>

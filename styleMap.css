@@ -1,0 +1,62 @@
+/* stylesheet of gpsMap.html */
+
+/* h1のスタイル */
+h1 {
+    text-align: center;
+    position: relative;
+    color: #6eb0f9;
+    color: #482ddf;
+    line-height: 1.4;
+    -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
+}
+
+/* 並列スタイル */
+.flex {
+    display: flex;
+}
+
+/* ラズパイイメージ */
+.flex .image {
+    width: 60%;
+    height: 60%;
+    position: relative;
+    top: 0px;
+    left: 100px
+}
+
+/* 図形とテキスト */
+.flex .right {
+    margin: 0 0 0 0 20px;
+    position: relative;
+    top: 20px;
+    left: -150px;
+}
+
+/* 図形のスタイル */
+.rect {
+    width: 500px;
+    height: 250px;
+    border-radius: 10%;
+    background: skyblue;
+    position: relative;
+    top: 10px;
+}
+
+/* 図形内の文字列 */
+.rect span {
+    position: absolute;
+    display: inline-block;
+    left: 20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width :500px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  /* マップ */
+.Fcxtrot {
+    text-align: center;
+}

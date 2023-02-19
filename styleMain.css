@@ -1,126 +1,140 @@
-/* まず、style.cssにこのルールを書き入れてください。 */
+/* stylesheet of index.html */
 
 body {
-    font-size: 100%;
+   font-size: 100%;
 }
 
-/* h1のスタイル */
-#head1 {
-    color: rgb(255, 80, 147);
-    font-weight: bold;
-    font-size: 40px;
-}
 
-/* imageを横並びに表示 */
+/* 並列スタイル */
 .flex {
-    display: flex;
+   display: flex;
 }
 
+/* imageのスタイル */
 .flex .image {
-    width: 100px;
-    height: 100px;
-    margin: 50px;
-    padding: 0;
-    overflow: hidden;
-    position: relative;
-    border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  left: 50px;
 }
 
 .flex .right {
-    margin: 0 0 0 20px;
-    padding: 0;
+  margin: 0 0 0 20px;
+  padding: 0;
 }
 
 /* titleの装飾 */
 .flex .title {
-    margin: 40px;
-    position: relative;
-    /* padding: 5px 26px 5px 42px; */
-    padding: 5px 30px 5px 60px;
-    background: #fff0d9;
-    font-family: "Bodoni MT Black";
-    font-weight: bold;
-    font-size: 40px;
-    color: #2d2d2d;
-    line-height: 1.3;
-    border-bottom: solid 3px orange;
-    z-index:-2;
+  margin: 40px;
+  position: relative;
+  padding: 5px 30px 5px 60px;
+  background: #fff0d9;
+  font-family: "Bodoni MT Black";
+  font-weight: bold;
+  font-size: 40px;
+  color: #2d2d2d;
+  line-height: 1.3;
+  border-bottom: solid 3px orange;
+  z-index:-2;
 }
-  
+
 .flex .title:before {
-    position: absolute;
-    content: '';
-    left: -2px;
-    top: -2px;
-    width: 0;
-    height: 0;
-    border: none;
-    border-left: solid 40px white;
-    border-bottom: solid 79px transparent;
-    z-index: -1;
+  position: absolute;
+  content: '';
+  left: -2px;
+  top: -2px;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 40px white;
+  border-bottom: solid 79px transparent;
+  z-index: -1;
 }
-  
+
 .flex .title:after {
-    position: absolute;
-    content: '';
-    right: -3px;
-    top: -7px;
-    width: 0;
-    height: 0;
-    border: none;
-    border-left: solid 40px transparent;
-    border-bottom: solid 79px white;
-    z-index: -1;
+  position: absolute;
+  content: '';
+  right: -3px;
+  top: -7px;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 40px transparent;
+  border-bottom: solid 79px white;
+  z-index: -1;
 }
 
 /* text */
 .flex .text {
-    margin: 0 0 0 40px;
-    padding: 0;
-    font-weight: bold;
-    font-size: 30px;
+  position: relative;
+  margin: 0 0 0 40px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 30px;
 }
+  
+.flex .text:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: -webkit-repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+  background: repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+}
+
+/* h1のスタイル */
+h1 {
+  color: rgb(255, 80, 147);
+  font-weight: bold;
+  font-size: 40px;
+}    
 
 /* contentsの表示エリア */
 .outer {
-    text-align: center;
+  text-align: center;
 }
 .inner {
-    display: inline-block;
-    text-align: left;
+  display: inline-block;
+  text-align: left;
 }
 
 /* contents */
 .contents {
-    color: azure;
-    font-family: "HG丸ｺﾞｼｯｸM-PRO";
-    font-weight: bold;
-    font-size: 40px;
+  color: azure;
+  font-family: "HG丸ｺﾞｼｯｸM-PRO";
+  font-weight: bold;
+  font-size: 30px;
 }
 
 /* ulの装飾 */
 ul {
-    padding: 0;
-    position: relative;
+  padding: 0;
+  position: relative;
 }
 ul li {
-    line-height: 1.5;
-    padding: 0.5em 0.5em 0.5em 1.7em;
-    list-style-type: none!important;
-    background: -webkit-linear-gradient(top, skyblue 0%, #5aade6 100%); /*グラデーション*/
-    background: linear-gradient(to bottom, skyblue 0%, #5aade6 100%);   /*グラデーション*/
-    color: #fff;
+  line-height: 1.5;
+  padding: 0.5em 0.5em 0.5em 1.7em;
+  list-style-type: none!important;
+  background: -webkit-linear-gradient(top, skyblue 0%, #5aade6 100%); /*グラデーション*/
+  background: linear-gradient(to bottom, skyblue 0%, #5aade6 100%);   /*グラデーション*/
+  color: #fff;
 }
 
 ul li:before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f138";
-    position: absolute;
-    left : 0.5em;
-    color: white;
+  font-family: "Font Awesome 5 Free";
+  content: "\f138";
+  position: absolute;
+  left : 0.5em;
+  color: white;
 }
 
 /* linkの文字色をスタイルに合わせて変更 */
 a {
-    color: white;
+  color: white;
 }
