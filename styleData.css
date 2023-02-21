@@ -39,7 +39,7 @@ td {
 }
 
 caption {
-    text-align:center;           /* センター揃え */
+    text-align: left;           /* 左揃え */
     font-size: 20px;
     font-weight: bold;
 }
