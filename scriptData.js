@@ -135,10 +135,9 @@ function setData() {
 // アイコンを指定位置へ表示
 function setDraw(carIndex, x, y) {
   const objCarIcon = document.getElementById(car[carIndex]);
-  objCarIcon.style.left = Math.abs(y) + 500 + "px";
-  objCarIcon.style.top = Math.abs(x) + 600 + "px";
-  // objCarIcon.style.left = y + 650 + "px";
-  // objCarIcon.style.top = x + 900 + "px";
+  // マスターの独自座標と、ラウザの座標のマッピングは要検討
+  objCarIcon.style.top = Number(x) + 600 + "px";
+  objCarIcon.style.left = Number(y) + 800 + "px";
 }
 
 setInterval(action, 1000);  // 時計用
@@ -195,7 +194,8 @@ function readCsv() {
   return arrayRet;
 }
 
-// postgreSQL DBへ接続
+// postgreSQL DBへ接続し、カレントデータ取得
+// const arrayData = [];
 // function getDBData() {
 //   const {Client} = require('pg');
 //   const client = new Client({
@@ -207,14 +207,18 @@ function readCsv() {
 //   })
  
 //   client.connect()
-
+//   const arrayCurrent = [];
 //   sql = "select * from t_vehicle_state";
-//   const arrayCurrent = client.query(sql)
-//   arrayCsv.splice[0, arrayCsv.length - 1];
-//   arrayCurrent.map(function(element) {
+//   client.query(sql)
+//     .then(res => arrayCurrent.push(res.rows))
+//     .catch(e => console.error(e.stack))
+//   arrayData.slice(0, arrayData.length - 1)
+//   arrayCurrent.map(element => {
 //       sql = "select location_name, x, y, z from m_route_master where vehicle_id = "
 //              + element[0] + " and waypoint_id = " + element[7];
-//       arrayCsv.push(client.query(sql));
+//       client.query(sql)
+//         .then(res => arrayData.push(res.rows))
+//         .catch(e => console.error(e.stack))
 //   })
 // }
 
