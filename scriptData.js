@@ -147,7 +147,7 @@ function setDraw(carIndex, x, y) {
   objCarIcon.style.left = Number(y) + 800 + "px";
 }
 
-// CSVファイルを読込み、データ配列を返す
+// マスターファイルを読込み、データ配列を返す
 function readCsv() {  
   const arrayRet = [];                        // 返り値  
   const csv = new XMLHttpRequest();           // XMLHttpRequestオブジェクトインスタンス
@@ -240,12 +240,6 @@ function getDBData() {
  */
 
 // 地図上の座標確認用
-// document.body.addEventListener("click", function(event) {
-// 	let x = event.pageX;
-// 	let y = event.pageY;
-//   console.log("x:", x, " y:", y);
-// });
-
 document.body.addEventListener("click", event => 
   console.log("x:", event.pageX, " y:", event.pageY));
 
